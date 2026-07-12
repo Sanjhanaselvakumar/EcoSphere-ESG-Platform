@@ -23,7 +23,7 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen flex bg-background">
+    <div className="min-h-screen flex bg-slate-50">
       {/* Left panel */}
       <motion.div
         initial={{ opacity: 0, x: -20 }}
@@ -37,15 +37,15 @@ export default function Login() {
               <Globe2 size={18} className="text-white" />
             </div>
             <div>
-              <span className="text-base font-bold text-textPrimary">EcoSphere</span>
-              <p className="text-xs text-textSecondary">ESG Management Platform</p>
+              <span className="text-base font-bold text-slate-900">EcoSphere</span>
+              <p className="text-xs text-slate-500">ESG Management Platform</p>
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold text-textPrimary mb-3">
+          <h2 className="text-2xl font-bold text-slate-900 mb-3">
             Manage your ESG journey with confidence
           </h2>
-          <p className="text-sm text-textSecondary leading-relaxed mb-10">
+          <p className="text-sm text-slate-500 leading-relaxed mb-10">
             A comprehensive platform for tracking environmental impact, social initiatives, and governance compliance — all in one place.
           </p>
 
@@ -62,8 +62,8 @@ export default function Login() {
                   <Icon size={16} className="text-primary-600" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-textPrimary">{title}</p>
-                  <p className="text-xs text-textSecondary mt-0.5">{desc}</p>
+                  <p className="text-sm font-semibold text-slate-900">{title}</p>
+                  <p className="text-xs text-slate-500 mt-0.5">{desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -79,7 +79,7 @@ export default function Login() {
             ].map(({ value, label }) => (
               <div key={label} className="flex-1 text-center">
                 <p className="text-lg font-bold text-primary-600">{value}</p>
-                <p className="text-[10px] text-textSecondary uppercase tracking-wide">{label}</p>
+                <p className="text-[10px] text-slate-500 uppercase tracking-wide">{label}</p>
               </div>
             ))}
           </div>
@@ -98,15 +98,15 @@ export default function Login() {
             <div className="w-8 h-8 bg-primary-600 rounded-xl flex items-center justify-center">
               <Globe2 size={16} className="text-white" />
             </div>
-            <span className="text-base font-bold text-textPrimary">EcoSphere</span>
+            <span className="text-base font-bold text-slate-900">EcoSphere</span>
           </div>
 
-          <h1 className="text-2xl font-bold text-textPrimary mb-1">Welcome back</h1>
-          <p className="text-sm text-textSecondary mb-7">Sign in to your ESG dashboard</p>
+          <h1 className="text-2xl font-bold text-slate-900 mb-1">Welcome back</h1>
+          <p className="text-sm text-slate-500 mb-7">Sign in to your ESG dashboard</p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-xs font-medium text-textPrimary mb-1.5">Email address</label>
+              <label className="block text-xs font-medium text-slate-900 mb-1.5">Email address</label>
               <input
                 type="email"
                 value={email}
@@ -118,7 +118,7 @@ export default function Login() {
             </div>
             <div>
               <div className="flex items-center justify-between mb-1.5">
-                <label className="text-xs font-medium text-textPrimary">Password</label>
+                <label className="text-xs font-medium text-slate-900">Password</label>
                 <button type="button" className="text-xs text-primary-600 hover:underline">Forgot password?</button>
               </div>
               <div className="relative">
@@ -133,7 +133,7 @@ export default function Login() {
                 <button
                   type="button"
                   onClick={() => setShowPw(!showPw)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-textSecondary hover:text-textPrimary"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-900"
                 >
                   {showPw ? <EyeOff size={15} /> : <Eye size={15} />}
                 </button>
@@ -141,7 +141,7 @@ export default function Login() {
             </div>
             <div className="flex items-center gap-2">
               <input type="checkbox" id="remember" className="w-3.5 h-3.5 rounded accent-primary-600" defaultChecked />
-              <label htmlFor="remember" className="text-xs text-textSecondary">Remember me for 30 days</label>
+              <label htmlFor="remember" className="text-xs text-slate-500">Remember me for 30 days</label>
             </div>
             <button
               type="submit"
@@ -157,8 +157,8 @@ export default function Login() {
           </form>
 
           <div className="mt-6 p-3 bg-slate-50 rounded-lg border border-slate-200">
-            <p className="text-xs text-textSecondary text-center mb-1 font-medium">Demo credentials</p>
-            <p className="text-xs text-textSecondary text-center">sarah.chen@ecosphere.com / password123</p>
+            <p className="text-xs text-slate-500 text-center mb-1 font-medium">Demo credentials</p>
+            <p className="text-xs text-slate-500 text-center">sarah.chen@ecosphere.com / password123</p>
           </div>
         </motion.div>
       </div>

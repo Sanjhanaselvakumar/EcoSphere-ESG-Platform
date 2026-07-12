@@ -46,7 +46,7 @@ export default function Governance() {
         {tabs.map(tab => (
           <button key={tab} onClick={() => setActiveTab(tab)}
             className={`px-4 py-2.5 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
-              activeTab === tab ? 'border-primary-600 text-primary-600' : 'border-transparent text-textSecondary hover:text-textPrimary'
+              activeTab === tab ? 'border-primary-600 text-primary-600' : 'border-transparent text-slate-500 hover:text-slate-900'
             }`}
           >
             {tab}
@@ -68,8 +68,8 @@ export default function Governance() {
                 <div className={`inline-flex w-8 h-8 rounded-lg items-center justify-center mb-3 ${color}`}>
                   <Icon size={15} />
                 </div>
-                <p className="text-xl font-bold text-textPrimary">{value}</p>
-                <p className="text-xs text-textSecondary mt-0.5">{label}</p>
+                <p className="text-xl font-bold text-slate-900">{value}</p>
+                <p className="text-xs text-slate-500 mt-0.5">{label}</p>
               </Card>
             ))}
           </div>
@@ -99,9 +99,9 @@ export default function Governance() {
                     <div key={item.name} className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
                         <span className="w-2.5 h-2.5 rounded-full" style={{ background: item.color }} />
-                        <span className="text-xs text-textSecondary">{item.name}</span>
+                        <span className="text-xs text-slate-500">{item.name}</span>
                       </div>
-                      <span className="text-xs font-semibold text-textPrimary">{item.value}%</span>
+                      <span className="text-xs font-semibold text-slate-900">{item.value}%</span>
                     </div>
                   ))}
                 </div>
@@ -143,8 +143,8 @@ export default function Governance() {
               {audits.slice(0, 4).map(audit => (
                 <div key={audit.id} className="px-5 py-3 flex items-center gap-4 hover:bg-slate-50 transition-colors">
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-textPrimary truncate">{audit.title}</p>
-                    <p className="text-xs text-textSecondary mt-0.5">{audit.auditor} · {formatDate(audit.date)}</p>
+                    <p className="text-sm font-medium text-slate-900 truncate">{audit.title}</p>
+                    <p className="text-xs text-slate-500 mt-0.5">{audit.auditor} · {formatDate(audit.date)}</p>
                   </div>
                   <Badge variant={audit.type === 'External' ? 'blue' : audit.type === 'Third-party' ? 'purple' : 'gray'}>{audit.type}</Badge>
                   <Badge variant={getStatusColor(audit.status)} dot>{audit.status}</Badge>
@@ -208,15 +208,15 @@ export default function Governance() {
               <Card key={policy.id}>
                 <div className="flex items-start justify-between mb-3">
                   <div className="flex-1 min-w-0 mr-3">
-                    <p className="text-sm font-semibold text-textPrimary">{policy.title}</p>
-                    <p className="text-xs text-textSecondary mt-0.5">{policy.category}</p>
+                    <p className="text-sm font-semibold text-slate-900">{policy.title}</p>
+                    <p className="text-xs text-slate-500 mt-0.5">{policy.category}</p>
                   </div>
                   <ProgressRing value={rate} size={56} strokeWidth={5} color={rate >= 90 ? '#16A34A' : rate >= 75 ? '#F59E0B' : '#EF4444'} />
                 </div>
                 <div className="w-full bg-slate-100 rounded-full h-1.5 mt-2">
                   <div className="h-1.5 rounded-full transition-all" style={{ width: `${rate}%`, background: rate >= 90 ? '#16A34A' : '#F59E0B' }} />
                 </div>
-                <p className="text-xs text-textSecondary mt-1.5">{policy.acknowledgements} / {policy.total} employees</p>
+                <p className="text-xs text-slate-500 mt-1.5">{policy.acknowledgements} / {policy.total} employees</p>
               </Card>
             )
           })}
@@ -302,8 +302,8 @@ export default function Governance() {
               ['Acknowledged', `${selectedPolicy.acknowledgements} / ${selectedPolicy.total}`],
             ].map(([k, v]) => (
               <div key={k} className="flex justify-between text-sm border-b border-slate-200 pb-2">
-                <span className="text-textSecondary">{k}</span>
-                <span className="font-medium text-textPrimary">{v}</span>
+                <span className="text-slate-500">{k}</span>
+                <span className="font-medium text-slate-900">{v}</span>
               </div>
             ))}
           </div>
@@ -328,8 +328,8 @@ export default function Governance() {
               ['Due Date', formatDate(selectedIssue.dueDate)],
             ].map(([k, v]) => (
               <div key={k} className="flex justify-between text-sm border-b border-slate-200 pb-2">
-                <span className="text-textSecondary">{k}</span>
-                <span className="font-medium text-textPrimary">{v}</span>
+                <span className="text-slate-500">{k}</span>
+                <span className="font-medium text-slate-900">{v}</span>
               </div>
             ))}
           </div>

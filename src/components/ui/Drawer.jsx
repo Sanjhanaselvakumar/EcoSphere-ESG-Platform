@@ -20,14 +20,14 @@ export default function Drawer({ open, onClose, title, children, side = 'right',
             exit={{ x: side === 'right' ? '100%' : '-100%' }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             className={cn(
-              'absolute top-0 bottom-0 bg-white shadow-modal border-slate-200 z-10 flex flex-col',
+              'absolute top-0 bottom-0 bg-white shadow-2xl border-slate-200 z-10 flex flex-col',
               side === 'right' ? 'right-0 border-l' : 'left-0 border-r',
               width
             )}
           >
             <div className="flex items-center justify-between px-5 py-4 border-b border-slate-200 flex-shrink-0">
-              <h3 className="text-base font-semibold text-textPrimary">{title}</h3>
-              <button onClick={onClose} className="p-1.5 rounded-md hover:bg-slate-100 text-textSecondary transition-colors">
+              <h3 className="text-base font-semibold text-slate-900">{title}</h3>
+              <button onClick={onClose} className="p-1.5 rounded-md hover:bg-slate-100 text-slate-500 transition-colors">
                 <X size={16} />
               </button>
             </div>

@@ -8,7 +8,7 @@ export function Skeleton({ className }) {
 
 export function StatCardSkeleton() {
   return (
-    <div className="bg-surface rounded-lg border border-slate-200 shadow-card p-5 space-y-3">
+    <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-5 space-y-3">
       <div className="flex items-start justify-between">
         <Skeleton className="w-9 h-9 rounded-lg" />
         <Skeleton className="w-14 h-5 rounded-full" />
@@ -40,7 +40,7 @@ export function TableSkeleton({ rows = 5, cols = 4 }) {
 
 export function ChartSkeleton({ height = 280 }) {
   return (
-    <div className="bg-surface rounded-lg border border-slate-200 shadow-card p-5">
+    <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-5">
       <Skeleton className="w-32 h-4 mb-2" />
       <Skeleton className="w-48 h-3 mb-5" />
       <Skeleton className={`w-full rounded-lg`} style={{ height }} />

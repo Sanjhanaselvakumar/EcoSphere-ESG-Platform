@@ -56,7 +56,7 @@ export default function Settings() {
         {tabs.map(tab => (
           <button key={tab} onClick={() => setActiveTab(tab)}
             className={`px-4 py-2.5 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
-              activeTab === tab ? 'border-primary-600 text-primary-600' : 'border-transparent text-textSecondary hover:text-textPrimary'
+              activeTab === tab ? 'border-primary-600 text-primary-600' : 'border-transparent text-slate-500 hover:text-slate-900'
             }`}
           >
             {tab}
@@ -69,7 +69,7 @@ export default function Settings() {
         <div className="max-w-2xl space-y-4">
           <Card>
             <div className="flex items-center gap-2 mb-5">
-              <Globe size={16} className="text-textSecondary" />
+              <Globe size={16} className="text-slate-500" />
               <CardTitle>Organization Settings</CardTitle>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -82,7 +82,7 @@ export default function Settings() {
                 { key: 'timezone', label: 'Timezone', type: 'select', options: ['America/Los_Angeles', 'America/New_York', 'Europe/London', 'Asia/Tokyo'] },
               ].map(({ key, label, type, options }) => (
                 <div key={key}>
-                  <label className="block text-xs font-medium text-textPrimary mb-1.5">{label}</label>
+                  <label className="block text-xs font-medium text-slate-900 mb-1.5">{label}</label>
                   {type === 'select' ? (
                     <select
                       value={general[key]}
@@ -117,7 +117,7 @@ export default function Settings() {
       {activeTab === 'Departments' && (
         <div className="space-y-4">
           <div className="flex justify-between items-center">
-            <p className="text-sm text-textSecondary">{departments.length} departments configured</p>
+            <p className="text-sm text-slate-500">{departments.length} departments configured</p>
             <Button variant="primary" size="sm" onClick={() => setAddDeptOpen(true)}>
               <Plus size={13} /> Add Department
             </Button>
@@ -153,7 +153,7 @@ export default function Settings() {
       {activeTab === 'Categories' && (
         <div className="space-y-4">
           <div className="flex justify-between items-center">
-            <p className="text-sm text-textSecondary">{categories.length} categories configured</p>
+            <p className="text-sm text-slate-500">{categories.length} categories configured</p>
             <Button variant="primary" size="sm"><Plus size={13} /> Add Category</Button>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -162,10 +162,10 @@ export default function Settings() {
                 <div className="flex items-start justify-between">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">
-                      <p className="text-sm font-semibold text-textPrimary">{cat.name}</p>
+                      <p className="text-sm font-semibold text-slate-900">{cat.name}</p>
                       {!cat.active && <Badge variant="gray">Inactive</Badge>}
                     </div>
-                    <p className="text-xs text-textSecondary">{cat.description}</p>
+                    <p className="text-xs text-slate-500">{cat.description}</p>
                     <Badge variant={cat.type === 'Environmental' ? 'green' : cat.type === 'Social' ? 'blue' : 'purple'} className="mt-2">
                       {cat.type}
                     </Badge>
@@ -195,7 +195,7 @@ export default function Settings() {
                 { label: 'Boundary Method', options: ['Operational Control', 'Financial Control', 'Equity Share'] },
               ].map(({ label, options }) => (
                 <div key={label} className="grid grid-cols-2 gap-3 items-center">
-                  <label className="text-sm text-textPrimary font-medium">{label}</label>
+                  <label className="text-sm text-slate-900 font-medium">{label}</label>
                   <select className="input">
                     {options.map(o => <option key={o}>{o}</option>)}
                   </select>
@@ -217,8 +217,8 @@ export default function Settings() {
               {notifications.map(n => (
                 <div key={n.key} className="flex items-center justify-between py-3.5">
                   <div className="flex-1 min-w-0 mr-4">
-                    <p className="text-sm font-medium text-textPrimary">{n.label}</p>
-                    <p className="text-xs text-textSecondary mt-0.5">{n.desc}</p>
+                    <p className="text-sm font-medium text-slate-900">{n.label}</p>
+                    <p className="text-xs text-slate-500 mt-0.5">{n.desc}</p>
                   </div>
                   <button
                     onClick={() => toggleNotif(n.key)}
@@ -243,7 +243,7 @@ export default function Settings() {
         <div className="space-y-4">
           {['Department Name', 'Department Head', 'Email'].map(label => (
             <div key={label}>
-              <label className="block text-xs font-medium text-textPrimary mb-1.5">{label}</label>
+              <label className="block text-xs font-medium text-slate-900 mb-1.5">{label}</label>
               <input type="text" className="input" placeholder={label} />
             </div>
           ))}

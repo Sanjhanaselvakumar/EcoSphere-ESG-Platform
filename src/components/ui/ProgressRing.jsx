@@ -18,8 +18,8 @@ export default function ProgressRing({ value = 0, size = 80, strokeWidth = 7, co
         />
       </svg>
       <div className="absolute flex flex-col items-center justify-center">
-        <span className="text-sm font-bold text-textPrimary">{value}%</span>
-        {label && <span className="text-[9px] text-textSecondary uppercase tracking-wide">{label}</span>}
+        <span className="text-sm font-bold text-slate-900">{value}%</span>
+        {label && <span className="text-[9px] text-slate-500 uppercase tracking-wide">{label}</span>}
       </div>
     </div>
   )

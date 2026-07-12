@@ -5,8 +5,8 @@ export default function Card({ children, className, hover = false, padding = tru
     <div
       onClick={onClick}
       className={cn(
-        'bg-surface rounded-lg border border-slate-200 shadow-card',
-        hover && 'hover:shadow-card-hover transition-shadow duration-200 cursor-pointer',
+        'bg-white rounded-lg border border-slate-200 shadow-sm',
+        hover && 'hover:shadow-md transition-shadow duration-200 cursor-pointer',
         padding && 'p-5',
         className
       )}
@@ -26,9 +26,9 @@ export function CardHeader({ children, className, actions }) {
 }
 
 export function CardTitle({ children, className }) {
-  return <h3 className={cn('text-sm font-semibold text-textPrimary', className)}>{children}</h3>
+  return <h3 className={cn('text-sm font-semibold text-slate-900', className)}>{children}</h3>
 }
 
 export function CardDescription({ children, className }) {
-  return <p className={cn('text-xs text-textSecondary mt-0.5', className)}>{children}</p>
+  return <p className={cn('text-xs text-slate-500 mt-0.5', className)}>{children}</p>
 }

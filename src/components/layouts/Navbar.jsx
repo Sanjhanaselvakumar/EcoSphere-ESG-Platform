@@ -23,7 +23,7 @@ export default function Navbar({ sidebarCollapsed }) {
       {/* Search */}
       <div className="flex-1 max-w-sm">
         <div className="relative">
-          <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-textSecondary" />
+          <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500" />
           <input
             placeholder="Search anything..."
             className="w-full h-8 pl-9 pr-3 text-xs bg-slate-50 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-200 focus:border-primary-400 transition-all"
@@ -35,7 +35,7 @@ export default function Navbar({ sidebarCollapsed }) {
         {/* Dark mode toggle */}
         <button
           onClick={() => setDark(!dark)}
-          className="p-2 rounded-md hover:bg-slate-100 text-textSecondary transition-colors"
+          className="p-2 rounded-md hover:bg-slate-100 text-slate-500 transition-colors"
         >
           {dark ? <Sun size={16} /> : <Moon size={16} />}
         </button>
@@ -44,7 +44,7 @@ export default function Navbar({ sidebarCollapsed }) {
         <div className="relative">
           <button
             onClick={() => { setNotifOpen(!notifOpen); setUserOpen(false) }}
-            className="p-2 rounded-md hover:bg-slate-100 text-textSecondary transition-colors relative"
+            className="p-2 rounded-md hover:bg-slate-100 text-slate-500 transition-colors relative"
           >
             <Bell size={16} />
             {unread > 0 && (
@@ -59,10 +59,10 @@ export default function Navbar({ sidebarCollapsed }) {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 6 }}
                 transition={{ duration: 0.15 }}
-                className="absolute right-0 top-full mt-1 w-80 bg-white border border-slate-200 rounded-xl shadow-modal z-50"
+                className="absolute right-0 top-full mt-1 w-80 bg-white border border-slate-200 rounded-xl shadow-2xl z-50"
               >
                 <div className="px-4 py-3 border-b border-slate-200 flex items-center justify-between">
-                  <span className="text-sm font-semibold text-textPrimary">Notifications</span>
+                  <span className="text-sm font-semibold text-slate-900">Notifications</span>
                   <span className="text-xs text-primary-600 cursor-pointer hover:underline">Mark all read</span>
                 </div>
                 <div className="divide-y divide-border max-h-80 overflow-y-auto">
@@ -74,8 +74,8 @@ export default function Navbar({ sidebarCollapsed }) {
                           n.priority === 'medium' ? 'bg-amber-500' : 'bg-green-500'
                         )} />
                         <div>
-                          <p className="text-xs font-medium text-textPrimary">{n.title}</p>
-                          <p className="text-xs text-textSecondary mt-0.5 line-clamp-2">{n.message}</p>
+                          <p className="text-xs font-medium text-slate-900">{n.title}</p>
+                          <p className="text-xs text-slate-500 mt-0.5 line-clamp-2">{n.message}</p>
                           <p className="text-[10px] text-slate-400 mt-1">{n.time}</p>
                         </div>
                       </div>
@@ -100,10 +100,10 @@ export default function Navbar({ sidebarCollapsed }) {
           >
             <Avatar initials="SC" size="sm" />
             <div className="hidden sm:block text-left">
-              <p className="text-xs font-semibold text-textPrimary leading-tight">Sarah Chen</p>
-              <p className="text-[10px] text-textSecondary leading-tight">ESG Manager</p>
+              <p className="text-xs font-semibold text-slate-900 leading-tight">Sarah Chen</p>
+              <p className="text-[10px] text-slate-500 leading-tight">ESG Manager</p>
             </div>
-            <ChevronDown size={13} className="text-textSecondary ml-0.5" />
+            <ChevronDown size={13} className="text-slate-500 ml-0.5" />
           </button>
 
           <AnimatePresence>
@@ -113,7 +113,7 @@ export default function Navbar({ sidebarCollapsed }) {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 6 }}
                 transition={{ duration: 0.15 }}
-                className="absolute right-0 top-full mt-1 w-48 bg-white border border-slate-200 rounded-xl shadow-modal z-50 py-1"
+                className="absolute right-0 top-full mt-1 w-48 bg-white border border-slate-200 rounded-xl shadow-2xl z-50 py-1"
               >
                 {[
                   { label: 'View Profile', to: '/profile' },
@@ -121,7 +121,7 @@ export default function Navbar({ sidebarCollapsed }) {
                   { label: 'Notifications', to: '/notifications' },
                 ].map(item => (
                   <Link key={item.to} to={item.to} onClick={() => setUserOpen(false)}
-                    className="block px-4 py-2 text-xs text-textSecondary hover:bg-slate-50 hover:text-textPrimary transition-colors"
+                    className="block px-4 py-2 text-xs text-slate-500 hover:bg-slate-50 hover:text-slate-900 transition-colors"
                   >
                     {item.label}
                   </Link>

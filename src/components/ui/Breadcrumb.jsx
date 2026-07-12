@@ -4,7 +4,7 @@ import { cn } from '@/utils/cn'
 
 export default function Breadcrumb({ items = [], className }) {
   return (
-    <nav className={cn('flex items-center gap-1 text-xs text-textSecondary', className)}>
+    <nav className={cn('flex items-center gap-1 text-xs text-slate-500', className)}>
       <Link to="/dashboard" className="hover:text-primary-600 transition-colors flex items-center gap-1">
         <Home size={12} />
       </Link>
@@ -14,7 +14,7 @@ export default function Breadcrumb({ items = [], className }) {
           {item.href ? (
             <Link to={item.href} className="hover:text-primary-600 transition-colors">{item.label}</Link>
           ) : (
-            <span className={cn(i === items.length - 1 ? 'text-textPrimary font-medium' : '')}>{item.label}</span>
+            <span className={cn(i === items.length - 1 ? 'text-slate-900 font-medium' : '')}>{item.label}</span>
           )}
         </span>
       ))}

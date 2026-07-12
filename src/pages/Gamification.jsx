@@ -34,7 +34,7 @@ export default function Gamification() {
         {tabs.map(tab => (
           <button key={tab} onClick={() => setActiveTab(tab)}
             className={`px-4 py-2.5 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
-              activeTab === tab ? 'border-primary-600 text-primary-600' : 'border-transparent text-textSecondary hover:text-textPrimary'
+              activeTab === tab ? 'border-primary-600 text-primary-600' : 'border-transparent text-slate-500 hover:text-slate-900'
             }`}
           >
             {tab}
@@ -68,7 +68,7 @@ export default function Gamification() {
                   <Card hover onClick={() => setSelectedChallenge(challenge)}>
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex-1 min-w-0 mr-2">
-                        <p className="text-sm font-semibold text-textPrimary">{challenge.title}</p>
+                        <p className="text-sm font-semibold text-slate-900">{challenge.title}</p>
                         <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
                           <Badge variant={
                             challenge.category === 'Environmental' ? 'green' :
@@ -86,12 +86,12 @@ export default function Gamification() {
                       </div>
                     </div>
 
-                    <p className="text-xs text-textSecondary mb-3 line-clamp-2">{challenge.description}</p>
+                    <p className="text-xs text-slate-500 mb-3 line-clamp-2">{challenge.description}</p>
 
                     <div className="space-y-1.5">
                       <div className="flex justify-between text-xs">
-                        <span className="text-textSecondary flex items-center gap-1"><Users size={11} /> {challenge.participants} participants</span>
-                        <span className="text-textSecondary">Due: {new Date(challenge.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
+                        <span className="text-slate-500 flex items-center gap-1"><Users size={11} /> {challenge.participants} participants</span>
+                        <span className="text-slate-500">Due: {new Date(challenge.deadline).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</span>
                       </div>
                       <div className="w-full bg-slate-100 rounded-full h-1.5">
                         <div
@@ -99,9 +99,9 @@ export default function Gamification() {
                           style={{ width: `${challenge.progress}%` }}
                         />
                       </div>
-                      <div className="flex justify-between text-[10px] text-textSecondary">
+                      <div className="flex justify-between text-[10px] text-slate-500">
                         <span>Progress</span>
-                        <span className="font-medium text-textPrimary">{challenge.progress}%</span>
+                        <span className="font-medium text-slate-900">{challenge.progress}%</span>
                       </div>
                     </div>
                   </Card>
@@ -143,11 +143,11 @@ export default function Gamification() {
                           {isFirst && <Crown size={18} className="text-amber-500" />}
                           <Avatar initials={p.avatar} size="lg" />
                           <div>
-                            <p className="text-xs font-semibold text-textPrimary text-center">{p.name.split(' ')[0]}</p>
-                            <p className="text-[10px] text-textSecondary text-center">{p.xp.toLocaleString()} XP</p>
+                            <p className="text-xs font-semibold text-slate-900 text-center">{p.name.split(' ')[0]}</p>
+                            <p className="text-[10px] text-slate-500 text-center">{p.xp.toLocaleString()} XP</p>
                           </div>
                           <div className={`w-20 ${heights[i]} ${colors[i]} rounded-t-lg flex items-start justify-center pt-2`}>
-                            <span className="text-lg font-black text-textPrimary">#{p.rank}</span>
+                            <span className="text-lg font-black text-slate-900">#{p.rank}</span>
                           </div>
                         </div>
                       )
@@ -168,8 +168,8 @@ export default function Gamification() {
                         </span>
                         <Avatar initials={person.avatar} size="sm" />
                         <div className="flex-1 min-w-0">
-                          <p className="text-xs font-semibold text-textPrimary">{person.name}</p>
-                          <p className="text-[10px] text-textSecondary">{person.department}</p>
+                          <p className="text-xs font-semibold text-slate-900">{person.name}</p>
+                          <p className="text-[10px] text-slate-500">{person.department}</p>
                         </div>
                         <div className="hidden sm:flex items-center gap-1 flex-shrink-0">
                           {Array.from({ length: Math.min(person.badges, 5) }).map((_, j) => (
@@ -178,7 +178,7 @@ export default function Gamification() {
                         </div>
                         <div className="text-right flex-shrink-0">
                           <p className="text-sm font-bold text-primary-600">{person.xp.toLocaleString()}</p>
-                          <p className="text-[10px] text-textSecondary">Level {person.level}</p>
+                          <p className="text-[10px] text-slate-500">Level {person.level}</p>
                         </div>
                         <span className={`text-xs font-medium flex-shrink-0 w-6 text-right ${
                           person.change > 0 ? 'text-green-600' : person.change < 0 ? 'text-red-500' : 'text-slate-400'
@@ -225,13 +225,13 @@ export default function Gamification() {
                       </span>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between mb-1">
-                          <span className="text-sm font-semibold text-textPrimary">{d.department}</span>
+                          <span className="text-sm font-semibold text-slate-900">{d.department}</span>
                           <span className="text-sm font-bold text-primary-600">{d.score}/100</span>
                         </div>
                         <div className="w-full bg-slate-100 rounded-full h-1.5">
                           <div className="bg-primary-500 h-1.5 rounded-full" style={{ width: `${d.score}%` }} />
                         </div>
-                        <p className="text-[10px] text-textSecondary mt-1">{d.xp.toLocaleString()} XP total</p>
+                        <p className="text-[10px] text-slate-500 mt-1">{d.xp.toLocaleString()} XP total</p>
                       </div>
                     </div>
                   </Card>
@@ -254,11 +254,11 @@ export default function Gamification() {
             >
               <Card hover className="text-center">
                 <div className="text-4xl mb-3">{badge.icon}</div>
-                <p className="text-sm font-semibold text-textPrimary mb-1">{badge.name}</p>
-                <p className="text-xs text-textSecondary mb-3">{badge.description}</p>
+                <p className="text-sm font-semibold text-slate-900 mb-1">{badge.name}</p>
+                <p className="text-xs text-slate-500 mb-3">{badge.description}</p>
                 <div className="flex items-center justify-between">
                   <Badge variant={getRarityColor(badge.rarity)}>{badge.rarity}</Badge>
-                  <span className="text-xs text-textSecondary">{badge.holders} holders</span>
+                  <span className="text-xs text-slate-500">{badge.holders} holders</span>
                 </div>
               </Card>
             </motion.div>
@@ -279,7 +279,7 @@ export default function Gamification() {
               <Card className={!reward.available ? 'opacity-60' : ''}>
                 <div className="flex items-start justify-between mb-2">
                   <div className="flex-1 min-w-0 mr-2">
-                    <p className="text-sm font-semibold text-textPrimary">{reward.title}</p>
+                    <p className="text-sm font-semibold text-slate-900">{reward.title}</p>
                     <Badge variant="gray" className="mt-1">{reward.category}</Badge>
                   </div>
                   <div className="bg-amber-50 rounded-lg px-2.5 py-1.5 text-center flex-shrink-0">
@@ -287,9 +287,9 @@ export default function Gamification() {
                     <p className="text-[9px] text-amber-600 uppercase font-semibold">XP</p>
                   </div>
                 </div>
-                <p className="text-xs text-textSecondary mb-4">{reward.description}</p>
+                <p className="text-xs text-slate-500 mb-4">{reward.description}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-textSecondary">{reward.redeemed} redeemed</span>
+                  <span className="text-xs text-slate-500">{reward.redeemed} redeemed</span>
                   <Button
                     variant={reward.available ? 'primary' : 'secondary'}
                     size="sm"
@@ -315,7 +315,7 @@ export default function Gamification() {
               <Badge variant={difficultyColor[selectedChallenge.difficulty]}>{selectedChallenge.difficulty}</Badge>
               <Badge variant="yellow">+{selectedChallenge.xp} XP</Badge>
             </div>
-            <p className="text-sm text-textSecondary">{selectedChallenge.description}</p>
+            <p className="text-sm text-slate-500">{selectedChallenge.description}</p>
             <div className="grid grid-cols-2 gap-3">
               {[
                 ['Participants', selectedChallenge.participants],
@@ -324,14 +324,14 @@ export default function Gamification() {
                 ['Progress', `${selectedChallenge.progress}%`],
               ].map(([k, v]) => (
                 <div key={k} className="bg-slate-50 rounded-lg p-3">
-                  <p className="text-[10px] text-textSecondary uppercase tracking-wide">{k}</p>
-                  <p className="text-sm font-semibold text-textPrimary mt-0.5">{v}</p>
+                  <p className="text-[10px] text-slate-500 uppercase tracking-wide">{k}</p>
+                  <p className="text-sm font-semibold text-slate-900 mt-0.5">{v}</p>
                 </div>
               ))}
             </div>
             <div>
               <div className="flex justify-between text-xs mb-1.5">
-                <span className="text-textSecondary">Progress</span>
+                <span className="text-slate-500">Progress</span>
                 <span className="font-medium">{selectedChallenge.progress}%</span>
               </div>
               <div className="w-full bg-slate-100 rounded-full h-2.5">

@@ -89,7 +89,7 @@ export default function Reports() {
         {tabs.map(tab => (
           <button key={tab} onClick={() => setActiveTab(tab)}
             className={`px-4 py-2.5 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
-              activeTab === tab ? 'border-primary-600 text-primary-600' : 'border-transparent text-textSecondary hover:text-textPrimary'
+              activeTab === tab ? 'border-primary-600 text-primary-600' : 'border-transparent text-slate-500 hover:text-slate-900'
             }`}
           >
             {tab}
@@ -140,13 +140,13 @@ export default function Reports() {
                   <div className={`w-7 h-7 rounded-lg flex items-center justify-center ${color}`}>
                     <Icon size={14} />
                   </div>
-                  <span className="text-sm font-semibold text-textPrimary">{label} Metrics</span>
+                  <span className="text-sm font-semibold text-slate-900">{label} Metrics</span>
                 </div>
                 <div className="space-y-2.5">
                   {metrics.map(([k, v]) => (
                     <div key={k} className="flex justify-between items-center text-xs border-b border-slate-200 pb-2 last:border-0">
-                      <span className="text-textSecondary">{k}</span>
-                      <span className="font-semibold text-textPrimary">{v}</span>
+                      <span className="text-slate-500">{k}</span>
+                      <span className="font-semibold text-slate-900">{v}</span>
                     </div>
                   ))}
                 </div>
@@ -199,8 +199,8 @@ export default function Reports() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {metrics.map(([k, v]) => (
                   <div key={k} className="bg-slate-50 rounded-lg p-3">
-                    <p className="text-[10px] text-textSecondary uppercase tracking-wide mb-1">{k}</p>
-                    <p className="text-base font-bold text-textPrimary">{v}</p>
+                    <p className="text-[10px] text-slate-500 uppercase tracking-wide mb-1">{k}</p>
+                    <p className="text-base font-bold text-slate-900">{v}</p>
                   </div>
                 ))}
               </div>
@@ -224,7 +224,7 @@ export default function Reports() {
                     onChange={() => toggleField(field)}
                     className="w-3.5 h-3.5 rounded accent-primary-600"
                   />
-                  <span className="text-xs text-textPrimary">{field}</span>
+                  <span className="text-xs text-slate-900">{field}</span>
                 </label>
               ))}
             </div>
@@ -243,7 +243,7 @@ export default function Reports() {
               </div>
             </div>
             {selectedFields.length === 0 ? (
-              <div className="flex flex-col items-center justify-center py-12 text-textSecondary">
+              <div className="flex flex-col items-center justify-center py-12 text-slate-500">
                 <BarChart3 size={32} className="mb-3 opacity-40" />
                 <p className="text-sm">Select metrics to preview your report</p>
               </div>
@@ -257,8 +257,8 @@ export default function Reports() {
                     transition={{ delay: i * 0.03 }}
                     className="bg-slate-50 rounded-lg p-3 border border-slate-200"
                   >
-                    <p className="text-[10px] text-textSecondary uppercase tracking-wide mb-1">{field}</p>
-                    <p className="text-sm font-bold text-textPrimary">
+                    <p className="text-[10px] text-slate-500 uppercase tracking-wide mb-1">{field}</p>
+                    <p className="text-sm font-bold text-slate-900">
                       {field.includes('%') ? `${Math.floor(Math.random() * 30 + 70)}%` :
                        field.includes('Score') ? `${Math.floor(Math.random() * 20 + 75)}/100` :
                        field.includes('Emissions') ? `${Math.floor(Math.random() * 600 + 200)} tCO₂e` :
@@ -286,8 +286,8 @@ export default function Reports() {
               ['File Size', selectedReport.size],
             ].map(([k, v]) => (
               <div key={k} className="flex justify-between text-sm border-b border-slate-200 pb-2">
-                <span className="text-textSecondary">{k}</span>
-                <span className="font-medium text-textPrimary">{v}</span>
+                <span className="text-slate-500">{k}</span>
+                <span className="font-medium text-slate-900">{v}</span>
               </div>
             ))}
             <div className="flex gap-2 pt-2">

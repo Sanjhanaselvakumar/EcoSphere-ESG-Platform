@@ -132,9 +132,9 @@ export default function Dashboard() {
                 <div key={item.name} className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ background: item.color }} />
-                    <span className="text-xs text-textSecondary">{item.name}</span>
+                    <span className="text-xs text-slate-500">{item.name}</span>
                   </div>
-                  <span className="text-xs font-semibold text-textPrimary">{item.value}/100</span>
+                  <span className="text-xs font-semibold text-slate-900">{item.value}/100</span>
                 </div>
               ))}
             </div>
@@ -201,7 +201,7 @@ export default function Dashboard() {
               {['all', 'environmental', 'governance', 'social', 'gamification'].map(f => (
                 <button key={f} onClick={() => setActivityFilter(f)}
                   className={`px-2.5 py-1 rounded-full text-[10px] font-medium capitalize transition-all ${
-                    activityFilter === f ? 'bg-primary-600 text-white' : 'bg-slate-100 text-textSecondary hover:bg-slate-200'
+                    activityFilter === f ? 'bg-primary-600 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
                   }`}
                 >
                   {f}
@@ -220,9 +220,9 @@ export default function Dashboard() {
               >
                 <Avatar initials={a.avatar} size="sm" />
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs text-textPrimary">
+                  <p className="text-xs text-slate-900">
                     <span className="font-medium">{a.user}</span>
-                    <span className="text-textSecondary"> {a.action} </span>
+                    <span className="text-slate-500"> {a.action} </span>
                     <span className="font-medium">{a.target}</span>
                   </p>
                   <p className="text-[10px] text-slate-400 mt-0.5">{a.time}</p>
@@ -252,8 +252,8 @@ export default function Dashboard() {
                 </span>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs font-medium text-textPrimary truncate">{dept.department}</span>
-                    <span className="text-xs font-bold text-textPrimary">{dept.score}</span>
+                    <span className="text-xs font-medium text-slate-900 truncate">{dept.department}</span>
+                    <span className="text-xs font-bold text-slate-900">{dept.score}</span>
                   </div>
                   <div className="w-full bg-slate-100 rounded-full h-1.5">
                     <div

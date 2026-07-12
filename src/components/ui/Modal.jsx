@@ -35,17 +35,17 @@ export default function Modal({ open, onClose, title, description, children, siz
             exit={{ opacity: 0, scale: 0.96, y: 8 }}
             transition={{ duration: 0.18 }}
             className={cn(
-              'relative z-10 w-full bg-white rounded-xl shadow-modal border border-slate-200',
+              'relative z-10 w-full bg-white rounded-xl shadow-2xl border border-slate-200',
               sizes[size] || sizes.md,
               className
             )}
           >
             <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200">
               <div>
-                <h2 className="text-base font-semibold text-textPrimary">{title}</h2>
-                {description && <p className="text-xs text-textSecondary mt-0.5">{description}</p>}
+                <h2 className="text-base font-semibold text-slate-900">{title}</h2>
+                {description && <p className="text-xs text-slate-500 mt-0.5">{description}</p>}
               </div>
-              <button onClick={onClose} className="p-1.5 rounded-md hover:bg-slate-100 text-textSecondary transition-colors">
+              <button onClick={onClose} className="p-1.5 rounded-md hover:bg-slate-100 text-slate-500 transition-colors">
                 <X size={16} />
               </button>
             </div>

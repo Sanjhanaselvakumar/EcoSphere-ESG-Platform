@@ -54,7 +54,7 @@ export default function Notifications() {
       <div className="space-y-2">
         {filtered.length === 0 ? (
           <Card>
-            <div className="flex flex-col items-center justify-center py-12 text-textSecondary">
+            <div className="flex flex-col items-center justify-center py-12 text-slate-500">
               <Bell size={32} className="mb-3 opacity-40" />
               <p className="text-sm">No notifications</p>
             </div>
@@ -73,14 +73,14 @@ export default function Notifications() {
                   <span className="text-lg flex-shrink-0 mt-0.5">{typeIcon[n.type]}</span>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-0.5">
-                      <p className="text-sm font-semibold text-textPrimary">{n.title}</p>
+                      <p className="text-sm font-semibold text-slate-900">{n.title}</p>
                       <Badge variant={typeVariant[n.type]}>{n.type}</Badge>
                       <Badge variant={n.priority === 'high' ? 'red' : n.priority === 'medium' ? 'yellow' : 'gray'}>
                         {n.priority}
                       </Badge>
                       {!n.read && <span className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0" />}
                     </div>
-                    <p className="text-sm text-textSecondary">{n.message}</p>
+                    <p className="text-sm text-slate-500">{n.message}</p>
                     <p className="text-xs text-slate-400 mt-1.5">{n.time}</p>
                   </div>
                   <div className="flex items-center gap-1 flex-shrink-0">

@@ -28,7 +28,7 @@ export default function Sidebar({ collapsed, onToggle }) {
 
   return (
     <aside className={cn(
-      'fixed left-0 top-0 bottom-0 z-30 flex flex-col bg-white border-r border-slate-200 shadow-sidebar transition-all duration-200',
+      'fixed left-0 top-0 bottom-0 z-30 flex flex-col bg-white border-r border-slate-200 shadow-sm transition-all duration-200',
       collapsed ? 'w-[60px]' : 'w-56'
     )}>
       {/* Logo */}
@@ -45,8 +45,8 @@ export default function Sidebar({ collapsed, onToggle }) {
               transition={{ duration: 0.15 }}
               className="overflow-hidden"
             >
-              <span className="text-sm font-bold text-textPrimary whitespace-nowrap">EcoSphere</span>
-              <p className="text-[10px] text-textSecondary whitespace-nowrap">ESG Platform</p>
+              <span className="text-sm font-bold text-slate-900 whitespace-nowrap">EcoSphere</span>
+              <p className="text-[10px] text-slate-500 whitespace-nowrap">ESG Platform</p>
             </motion.div>
           )}
         </AnimatePresence>
@@ -100,8 +100,8 @@ export default function Sidebar({ collapsed, onToggle }) {
           <div className="flex items-center gap-2.5 p-2 rounded-lg hover:bg-slate-50 cursor-pointer mb-1">
             <div className="w-7 h-7 rounded-full bg-primary-100 text-primary-700 flex items-center justify-center text-xs font-semibold flex-shrink-0">SC</div>
             <div className="overflow-hidden">
-              <p className="text-xs font-semibold text-textPrimary truncate">Sarah Chen</p>
-              <p className="text-[10px] text-textSecondary truncate">ESG Manager</p>
+              <p className="text-xs font-semibold text-slate-900 truncate">Sarah Chen</p>
+              <p className="text-[10px] text-slate-500 truncate">ESG Manager</p>
             </div>
           </div>
         )}

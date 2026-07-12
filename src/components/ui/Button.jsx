@@ -2,8 +2,8 @@ import { cn } from '@/utils/cn'
 
 const variants = {
   primary:   'bg-primary-600 hover:bg-primary-700 text-white shadow-sm',
-  secondary: 'bg-white hover:bg-slate-50 text-textPrimary border border-slate-200 shadow-sm',
-  ghost:     'hover:bg-slate-100 text-textSecondary',
+  secondary: 'bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 shadow-sm',
+  ghost:     'hover:bg-slate-100 text-slate-500',
   danger:    'bg-red-600 hover:bg-red-700 text-white shadow-sm',
   outline:   'border border-primary-300 text-primary-700 hover:bg-primary-50',
 }

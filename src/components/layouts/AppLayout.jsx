@@ -8,7 +8,7 @@ export default function AppLayout() {
   const [collapsed, setCollapsed] = useState(false)
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-slate-50">
       <Sidebar collapsed={collapsed} onToggle={() => setCollapsed(c => !c)} />
       <div className={cn('flex flex-col min-h-screen transition-all duration-200', collapsed ? 'pl-[60px]' : 'pl-56')}>
         <Navbar sidebarCollapsed={collapsed} />

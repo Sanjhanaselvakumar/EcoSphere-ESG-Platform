@@ -44,8 +44,8 @@ export default function DataTable({
                 <th
                   key={col.key}
                   className={cn(
-                    'px-4 py-3 text-left text-xs font-semibold text-textSecondary uppercase tracking-wide whitespace-nowrap',
-                    col.sortable && 'cursor-pointer select-none hover:text-textPrimary'
+                    'px-4 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wide whitespace-nowrap',
+                    col.sortable && 'cursor-pointer select-none hover:text-slate-900'
                   )}
                   style={{ width: col.width }}
                   onClick={() => col.sortable && handleSort(col.key)}
@@ -66,7 +66,7 @@ export default function DataTable({
           <tbody className="divide-y divide-border">
             {paged.length === 0 ? (
               <tr>
-                <td colSpan={columns.length} className="px-4 py-12 text-center text-textSecondary text-sm">
+                <td colSpan={columns.length} className="px-4 py-12 text-center text-slate-500 text-sm">
                   {emptyMessage}
                 </td>
               </tr>
@@ -77,7 +77,7 @@ export default function DataTable({
                 className={cn('bg-white hover:bg-slate-50 transition-colors duration-100', onRowClick && 'cursor-pointer')}
               >
                 {columns.map((col) => (
-                  <td key={col.key} className="px-4 py-3 whitespace-nowrap text-textPrimary">
+                  <td key={col.key} className="px-4 py-3 whitespace-nowrap text-slate-900">
                     {col.render ? col.render(row[col.key], row) : row[col.key] ?? '—'}
                   </td>
                 ))}
@@ -89,7 +89,7 @@ export default function DataTable({
 
       {totalPages > 1 && (
         <div className="flex items-center justify-between mt-4 px-1">
-          <p className="text-xs text-textSecondary">
+          <p className="text-xs text-slate-500">
             Showing {(page - 1) * pageSize + 1}–{Math.min(page * pageSize, data.length)} of {data.length} records
           </p>
           <div className="flex items-center gap-1">
@@ -102,7 +102,7 @@ export default function DataTable({
                 onClick={() => setPage(p)}
                 className={cn(
                   'w-7 h-7 text-xs rounded-md font-medium transition-colors',
-                  p === page ? 'bg-primary-600 text-white' : 'hover:bg-slate-100 text-textSecondary'
+                  p === page ? 'bg-primary-600 text-white' : 'hover:bg-slate-100 text-slate-500'
                 )}
               >
                 {p}

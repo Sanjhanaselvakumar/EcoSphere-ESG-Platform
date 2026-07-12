@@ -48,9 +48,9 @@ export default function Profile() {
                 <input value={form.name} onChange={e => handleChange('name', e.target.value)}
                   className="input text-center font-bold text-base mb-1" />
               ) : (
-                <h2 className="text-base font-bold text-textPrimary">{form.name}</h2>
+                <h2 className="text-base font-bold text-slate-900">{form.name}</h2>
               )}
-              <p className="text-sm text-textSecondary">{form.title}</p>
+              <p className="text-sm text-slate-500">{form.title}</p>
               <Badge variant="green" className="mt-2">Level {user.level} · {user.xp.toLocaleString()} XP</Badge>
               <div className="w-full mt-4 space-y-2">
                 {[
@@ -60,12 +60,12 @@ export default function Profile() {
                   [Building, 'department'],
                 ].map(([Icon, key]) => (
                   <div key={key} className="flex items-center gap-2.5">
-                    <Icon size={13} className="text-textSecondary flex-shrink-0" />
+                    <Icon size={13} className="text-slate-500 flex-shrink-0" />
                     {editing ? (
                       <input value={form[key]} onChange={e => handleChange(key, e.target.value)}
                         className="input text-xs py-1" />
                     ) : (
-                      <span className="text-xs text-textSecondary truncate">{form[key]}</span>
+                      <span className="text-xs text-slate-500 truncate">{form[key]}</span>
                     )}
                   </div>
                 ))}
@@ -79,9 +79,9 @@ export default function Profile() {
             <div className="flex items-center gap-4">
               <ProgressRing value={Math.round((user.xp % 500) / 5)} size={72} strokeWidth={6} label="to next" />
               <div>
-                <p className="text-lg font-bold text-textPrimary">{user.xp.toLocaleString()} XP</p>
-                <p className="text-xs text-textSecondary">Level {user.level}</p>
-                <p className="text-xs text-textSecondary mt-1">Next level: {(Math.ceil(user.xp / 500) * 500).toLocaleString()} XP</p>
+                <p className="text-lg font-bold text-slate-900">{user.xp.toLocaleString()} XP</p>
+                <p className="text-xs text-slate-500">Level {user.level}</p>
+                <p className="text-xs text-slate-500 mt-1">Next level: {(Math.ceil(user.xp / 500) * 500).toLocaleString()} XP</p>
               </div>
             </div>
           </Card>
@@ -93,12 +93,12 @@ export default function Profile() {
               {userBadges.map(b => (
                 <div key={b.id} className="flex flex-col items-center gap-1 p-2 bg-slate-50 rounded-lg">
                   <span className="text-2xl">{b.icon}</span>
-                  <span className="text-[9px] text-textSecondary text-center leading-tight">{b.name}</span>
+                  <span className="text-[9px] text-slate-500 text-center leading-tight">{b.name}</span>
                 </div>
               ))}
               <div className="flex flex-col items-center justify-center gap-1 p-2 bg-slate-50 rounded-lg cursor-pointer hover:bg-slate-100 transition-colors">
                 <Award size={18} className="text-slate-400" />
-                <span className="text-[9px] text-textSecondary">+{badges.length - 5} more</span>
+                <span className="text-[9px] text-slate-500">+{badges.length - 5} more</span>
               </div>
             </div>
           </Card>
@@ -117,7 +117,7 @@ export default function Profile() {
                 className="input resize-none"
               />
             ) : (
-              <p className="text-sm text-textSecondary leading-relaxed">{form.bio}</p>
+              <p className="text-sm text-slate-500 leading-relaxed">{form.bio}</p>
             )}
           </Card>
 
@@ -132,8 +132,8 @@ export default function Profile() {
                 { label: 'XP Total', value: user.xp.toLocaleString(), sub: 'Points' },
               ].map(({ label, value, sub }) => (
                 <div key={label} className="bg-slate-50 rounded-lg p-3 text-center">
-                  <p className="text-xl font-bold text-textPrimary">{value}</p>
-                  <p className="text-xs text-textSecondary mt-0.5">{label}</p>
+                  <p className="text-xl font-bold text-slate-900">{value}</p>
+                  <p className="text-xs text-slate-500 mt-0.5">{label}</p>
                   <p className="text-[10px] text-slate-400">{sub}</p>
                 </div>
               ))}
@@ -148,13 +148,13 @@ export default function Profile() {
                 <div key={c.id} className="flex items-center gap-3 p-3 bg-slate-50 rounded-lg">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between mb-1">
-                      <p className="text-xs font-medium text-textPrimary truncate">{c.title}</p>
+                      <p className="text-xs font-medium text-slate-900 truncate">{c.title}</p>
                       <span className="text-xs font-bold text-amber-600 ml-2">+{c.xp} XP</span>
                     </div>
                     <div className="w-full bg-white rounded-full h-1.5">
                       <div className="bg-primary-500 h-1.5 rounded-full" style={{ width: `${c.progress}%` }} />
                     </div>
-                    <p className="text-[10px] text-textSecondary mt-1">{c.progress}% complete</p>
+                    <p className="text-[10px] text-slate-500 mt-1">{c.progress}% complete</p>
                   </div>
                 </div>
               ))}
@@ -181,8 +181,8 @@ export default function Profile() {
                   <div className="flex items-center gap-2.5">
                     <Star size={12} className="text-amber-500 flex-shrink-0" />
                     <div>
-                      <p className="text-xs text-textPrimary">{a.text}</p>
-                      <p className="text-[10px] text-textSecondary">{a.time}</p>
+                      <p className="text-xs text-slate-900">{a.text}</p>
+                      <p className="text-[10px] text-slate-500">{a.time}</p>
                     </div>
                   </div>
                   <span className="text-xs font-bold text-green-600 flex-shrink-0">+{a.xp} XP</span>

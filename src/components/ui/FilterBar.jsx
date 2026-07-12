@@ -4,7 +4,7 @@ import { cn } from '@/utils/cn'
 export default function FilterBar({ filters = [], activeFilter, onChange, className }) {
   return (
     <div className={cn('flex items-center gap-1.5 flex-wrap', className)}>
-      <span className="flex items-center gap-1.5 text-xs text-textSecondary mr-1">
+      <span className="flex items-center gap-1.5 text-xs text-slate-500 mr-1">
         <Filter size={12} /> Filter:
       </span>
       {filters.map((f) => (
@@ -15,7 +15,7 @@ export default function FilterBar({ filters = [], activeFilter, onChange, classN
             'px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-150',
             activeFilter === f.value
               ? 'bg-primary-600 text-white'
-              : 'bg-white border border-slate-200 text-textSecondary hover:border-primary-300 hover:text-primary-600'
+              : 'bg-white border border-slate-200 text-slate-500 hover:border-primary-300 hover:text-primary-600'
           )}
         >
           {f.label}

@@ -44,7 +44,7 @@ export default function Environmental() {
             className={`px-4 py-2.5 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
               activeTab === tab
                 ? 'border-primary-600 text-primary-600'
-                : 'border-transparent text-textSecondary hover:text-textPrimary'
+                : 'border-transparent text-slate-500 hover:text-slate-900'
             }`}
           >
             {tab}
@@ -67,8 +67,8 @@ export default function Environmental() {
                 <div className={`inline-flex items-center justify-center w-8 h-8 rounded-lg mb-3 ${color}`}>
                   <Icon size={15} />
                 </div>
-                <p className="text-xl font-bold text-textPrimary">{value}</p>
-                <p className="text-xs text-textSecondary mt-0.5">{label}</p>
+                <p className="text-xl font-bold text-slate-900">{value}</p>
+                <p className="text-xs text-slate-500 mt-0.5">{label}</p>
               </Card>
             ))}
           </div>
@@ -227,7 +227,7 @@ export default function Environmental() {
             <Card key={goal.id} hover>
               <div className="flex items-start justify-between mb-3">
                 <div className="flex-1 min-w-0 mr-3">
-                  <p className="text-sm font-semibold text-textPrimary truncate">{goal.title}</p>
+                  <p className="text-sm font-semibold text-slate-900 truncate">{goal.title}</p>
                   <Badge variant={getStatusColor(goal.status)} dot className="mt-1">{goal.status}</Badge>
                 </div>
                 <ProgressRing value={goal.progress} size={64} strokeWidth={6} color={
@@ -237,20 +237,20 @@ export default function Environmental() {
               </div>
               <div className="grid grid-cols-2 gap-2 mt-3 pt-3 border-t border-slate-200">
                 <div>
-                  <p className="text-[10px] text-textSecondary uppercase tracking-wide">Category</p>
-                  <p className="text-xs font-medium text-textPrimary">{goal.category}</p>
+                  <p className="text-[10px] text-slate-500 uppercase tracking-wide">Category</p>
+                  <p className="text-xs font-medium text-slate-900">{goal.category}</p>
                 </div>
                 <div>
-                  <p className="text-[10px] text-textSecondary uppercase tracking-wide">Deadline</p>
-                  <p className="text-xs font-medium text-textPrimary">{formatDate(goal.deadline)}</p>
+                  <p className="text-[10px] text-slate-500 uppercase tracking-wide">Deadline</p>
+                  <p className="text-xs font-medium text-slate-900">{formatDate(goal.deadline)}</p>
                 </div>
                 <div>
-                  <p className="text-[10px] text-textSecondary uppercase tracking-wide">Current</p>
-                  <p className="text-xs font-medium text-textPrimary">{goal.current} {goal.unit}</p>
+                  <p className="text-[10px] text-slate-500 uppercase tracking-wide">Current</p>
+                  <p className="text-xs font-medium text-slate-900">{goal.current} {goal.unit}</p>
                 </div>
                 <div>
-                  <p className="text-[10px] text-textSecondary uppercase tracking-wide">Target</p>
-                  <p className="text-xs font-medium text-textPrimary">{goal.target} {goal.unit}</p>
+                  <p className="text-[10px] text-slate-500 uppercase tracking-wide">Target</p>
+                  <p className="text-xs font-medium text-slate-900">{goal.target} {goal.unit}</p>
                 </div>
               </div>
             </Card>
@@ -293,8 +293,8 @@ export default function Environmental() {
           <div className="space-y-3">
             {Object.entries(selectedFactor).map(([k, v]) => (
               <div key={k} className="flex justify-between text-sm border-b border-slate-200 pb-2">
-                <span className="text-textSecondary capitalize">{k}</span>
-                <span className="font-medium text-textPrimary">{String(v)}</span>
+                <span className="text-slate-500 capitalize">{k}</span>
+                <span className="font-medium text-slate-900">{String(v)}</span>
               </div>
             ))}
           </div>

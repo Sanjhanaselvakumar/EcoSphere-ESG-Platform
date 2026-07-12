@@ -19,7 +19,7 @@ export default function StatCard({ title, value, unit, change, changeType, descr
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: index * 0.05 }}
-      className="bg-surface rounded-lg border border-slate-200 shadow-card hover:shadow-card-hover transition-all duration-200 p-5"
+      className="bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-md transition-all duration-200 p-5"
     >
       <div className="flex items-start justify-between mb-3">
         <div className={cn('w-9 h-9 rounded-lg flex items-center justify-center', iconColorMap[color] || iconColorMap.green)}>
@@ -40,10 +40,10 @@ export default function StatCard({ title, value, unit, change, changeType, descr
       </div>
       <div className="space-y-0.5">
         <div className="flex items-baseline gap-1">
-          <span className="text-2xl font-bold text-textPrimary">{value}</span>
-          {unit && <span className="text-sm text-textSecondary font-medium">{unit}</span>}
+          <span className="text-2xl font-bold text-slate-900">{value}</span>
+          {unit && <span className="text-sm text-slate-500 font-medium">{unit}</span>}
         </div>
-        <p className="text-xs font-medium text-textSecondary uppercase tracking-wide">{title}</p>
+        <p className="text-xs font-medium text-slate-500 uppercase tracking-wide">{title}</p>
         {description && <p className="text-xs text-slate-400 mt-1">{description}</p>}
       </div>
     </motion.div>
