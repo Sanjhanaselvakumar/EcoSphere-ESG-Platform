@@ -2,6 +2,7 @@ import { Bell, Search, Sun, Moon, ChevronDown } from 'lucide-react'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Avatar from '@/components/ui/Avatar'
+import BackendStatus from '@/components/ui/BackendStatus'
 import { notifications } from '@/data/notificationsData'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/utils/cn'
@@ -32,6 +33,7 @@ export default function Navbar({ sidebarCollapsed }) {
       </div>
 
       <div className="flex items-center gap-1 ml-auto">
+        <BackendStatus />
         {/* Dark mode toggle */}
         <button
           onClick={() => setDark(!dark)}

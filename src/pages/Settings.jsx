@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Plus, Edit2, Trash2, Save, Building2, Tag, Bell, Settings2, Globe } from 'lucide-react'
+import { Plus, Edit2, Trash2, Save, Bell, Globe, RefreshCw } from 'lucide-react'
 import { motion } from 'framer-motion'
 import PageContainer from '@/components/layouts/PageContainer'
 import Card, { CardTitle, CardDescription } from '@/components/ui/Card'
@@ -7,7 +7,10 @@ import Button from '@/components/ui/Button'
 import Badge from '@/components/ui/Badge'
 import DataTable from '@/components/ui/DataTable'
 import Modal from '@/components/ui/Modal'
-import { departments, categories } from '@/data/settingsData'
+import { TableSkeleton } from '@/components/ui/LoadingSkeleton'
+import { useApi } from '@/hooks/useApi'
+import { fetchDepartments, fetchCategories } from '@/services/api'
+import { departments as staticDepts, categories as staticCats } from '@/data/settingsData'
 
 const tabs = ['General', 'Departments', 'Categories', 'Emission Config', 'Notifications']
 
@@ -26,6 +29,9 @@ export default function Settings() {
   const [notifications, setNotifications] = useState(notifSettings)
   const [addDeptOpen, setAddDeptOpen] = useState(false)
   const [generalSaved, setGeneralSaved] = useState(false)
+
+  const { data: departments, loading: loadingDepts, isLive: deptsLive, refetch: refetchDepts } = useApi(fetchDepartments, staticDepts)
+  const { data: categories,  loading: loadingCats,  isLive: catsLive,  refetch: refetchCats  } = useApi(fetchCategories,  staticCats)
 
   const [general, setGeneral] = useState({
     orgName: 'EcoSphere Corp',
@@ -118,10 +124,14 @@ export default function Settings() {
         <div className="space-y-4">
           <div className="flex justify-between items-center">
             <p className="text-sm text-slate-500">{departments.length} departments configured</p>
-            <Button variant="primary" size="sm" onClick={() => setAddDeptOpen(true)}>
-              <Plus size={13} /> Add Department
-            </Button>
+            <div className="flex gap-2">
+              <Button variant="ghost" size="sm" onClick={refetchDepts}><RefreshCw size={13} /></Button>
+              <Button variant="primary" size="sm" onClick={() => setAddDeptOpen(true)}>
+                <Plus size={13} /> Add Department
+              </Button>
+            </div>
           </div>
+          {loadingDepts ? <TableSkeleton rows={5} cols={5} /> : (
           <DataTable
             columns={[
               { key: 'id', label: 'ID', width: 80 },
@@ -146,6 +156,8 @@ export default function Settings() {
             ]}
             data={departments}
           />
+          )}
+          {deptsLive && <p className="text-xs text-green-600 mt-2">● Live data from backend</p>}
         </div>
       )}
 

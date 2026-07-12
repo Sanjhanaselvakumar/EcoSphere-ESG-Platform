@@ -1,5 +1,10 @@
+import { BackendProvider } from '@/context/BackendContext'
 import AppRoutes from './routes'
 
 export default function App() {
-  return <AppRoutes />
+  return (
+    <BackendProvider>
+      <AppRoutes />
+    </BackendProvider>
+  )
 }
